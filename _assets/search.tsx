@@ -1,9 +1,9 @@
 import Image from "next/image";
+import Navigation from "@/components/Navigation";
 import { getSampleData } from "@/tools/DataManager";
 import { Sample } from "@/tools/samples.model";
-import Navigation from "@/components/Navigation";
 
-export default function Random({samples}:{samples:Sample[]}) {  
+export default function Search({samples}:{samples:Sample[]}) {  
 
     return (
         <>

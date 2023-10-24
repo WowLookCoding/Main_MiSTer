@@ -1,22 +1,9 @@
-import { useState } from "react";
 import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import { getSampleData } from "@/tools/DataManager";
 import { Sample } from "@/tools/samples.model";
-import { getRandom } from "@/tools/Toolkit";
 
 export default function Random({samples}:{samples:Sample[]}) {
-
-    // ------------------------------------------- event handlers
-    const onRandom = (e:any) => {
-        // randomly select index of sample
-        let index:number = getRandom(0, samples.length - 1);
-        // update state variable which forces a render of all components
-        setSelected(samples[index]);
-    }
-
-    // -------------------------------------------- state variables
-    const [selected, setSelected] = useState<Sample>(samples[getRandom(0, samples.length - 1)]);
 
     return (
         <>
@@ -26,27 +13,27 @@ export default function Random({samples}:{samples:Sample[]}) {
                 <Navigation /> 
                 <div className="flex flex-wrap">
                     <div className="pr-5 pb-5">
-                        <input type="button" value="Surprise Me!" className="bg-white text-[#035074] p-2 rounded-md active:bg-[#EEAA40]" onClick={onRandom} />
+                        <input type="button" value="Surprise Me!" className="bg-white text-[#035074] p-2 rounded-md active:bg-[#EEAA40]" />
                     </div>
 
                     <div>
-                        <div id="txtName" className="font-title font-bold text-xl pb-3">{selected.name}</div>
-                        <div id="txtDescription" className="max-w-[600px] pb-3">{selected.description}</div>
+                        <div id="txtName" className="font-title font-bold text-xl pb-3">???</div>
+                        <div id="txtDescription" className="max-w-[600px] pb-3">???</div>
                         <div className="pb-4">
-                            <a href="{selected.url}" target="_blank" id="lnkUrl" className="hover:underline">{selected.url}</a>
+                            <a href="???" target="_blank" id="lnkUrl" className="hover:underline">???</a>
                         </div>
                         <div className="flex flex-nowrap">
                             <div>
-                                <Image src={"/images/" + selected.images[0].filename} width={75} height={75} alt="Portfolio Sample" className="rounded-lg mr-1.5" />
+                                <Image src="???" width={75} height={75} alt="Portfolio Sample" className="rounded-lg mr-1.5" />
                             </div>
                             <div>
-                                <Image src={"/images/" + selected.images[1].filename} width={50} height={50} alt="Portfolio Sample" className="rounded-lg mr-1.5" />
+                                <Image src="???" width={50} height={50} alt="Portfolio Sample" className="rounded-lg mr-1.5" />
                             </div>
                             <div>
-                                <Image src={"/images/" + selected.images[2].filename} width={50} height={50} alt="Portfolio Sample" className="rounded-lg mr-1.5" />
+                                <Image src="???" width={50} height={50} alt="Portfolio Sample" className="rounded-lg mr-1.5" />
                             </div>
                             <div>
-                                <Image src={"/images/" + selected.images[3].filename} width={50} height={50} alt="Portfolio Sample" className="rounded-lg mr-1.5" />
+                                <Image src="???" width={50} height={50} alt="Portfolio Sample" className="rounded-lg mr-1.5" />
                             </div>
                         </div>
                     </div>
