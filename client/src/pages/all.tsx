@@ -1,5 +1,4 @@
 import Image from "next/image";
-
 import Navigation from "@/components/Navigation";
 import { getSampleData } from "@/tools/DataManager";
 import { Sample } from "@/tools/samples.model";

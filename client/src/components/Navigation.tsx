@@ -25,16 +25,16 @@ export default function Navigation() {
 
             <Link href="/random">
                 <input 
-                    className="bg-white hover:opacity-50 text-[#035074] py-1 px-2 mr-2 rounded" 
+                    className={`${(route == "/random") ? "bg-[#EEAA40]" : "bg-white hover:opacity-50"} text-[#035074] py-1 px-2 mr-2 rounded`} 
                     type="button" value="Random" 
-                    disabled />
+                    disabled={(route == "/random") ? true : false} />
             </Link>
 
             <Link href="/search">
                 <input 
-                    className="bg-white hover:opacity-50 text-[#035074] py-1 px-2 mr-2 rounded"
+                    className={`${(route == "/search") ? "bg-[#EEAA40]" : "bg-white hover:opacity-50"} text-[#035074] py-1 px-2 mr-2 rounded`} 
                     type="button" value="Search" 
-                    disabled />
+                    disabled={(route == "/search") ? true : false} />
             </Link>
         </nav>
     );
